@@ -1,12 +1,14 @@
 {
   "name": "budget-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Budget tracker app that allows offline transactions by the user.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "lite-server": "lite-server"
+    "lite-server": "lite-server",
+    "webpack": "webpack --watch",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -17,11 +19,20 @@
   "bugs": {
     "url": "https://github.com/KevinGodek/budget-tracker.git"
   },
-  "homepage": "https://github.com/KevinGodek/budget-tracker.git",
+  "homepage": "https://github.com/coding-boot-camp/unit18hw#readme",
   "dependencies": {
+    "bootstrap": "^5.1.3",
     "compression": "^1.7.4",
     "express": "^4.17.1",
+    "jquery": "^3.6.0",
     "mongoose": "^5.5.15",
     "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-bundle-analyzer": "^3.8.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4",
+    "webpack-pwa-manifest": "^4.3.0"
   }
 }
