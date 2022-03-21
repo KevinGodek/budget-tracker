@@ -45,7 +45,7 @@
   "short_name": "BudgeT",
   "display": "standalone",
   "start_url": "./index.html",
-  "description": "Food event app.",
+  "description": "App that allows offline banking.",
   "background_color": "#00008b",
   "theme_color": "#808080"
 }
