@@ -9,6 +9,7 @@ request.onupgradeneeded = function(event) {
 request.onsuccess = function(event) {
   db = event.target.result;
   if (navigator.onLine) {
+    checkDatabase();
   }
 };
 
@@ -16,14 +17,14 @@ request.onerror = function(event) {
   console.log(event.target.errorCode);
 };
 
-function saveHistory(history) {
+function saveTransactions(history) {
   const transaction = db.transaction(['pending'], 'readwrite');
   const transactionObjectStore = transaction.objectStore('pending');
 
   transactionObjectStore.add(history);
 }
 
-function uploadTransactions() {
+function updateTransactions() {
   const transaction = db.transaction(['pending'], 'readwrite');
   const transactionObjectStore = transaction.objectStore('pending');
   const getAll = transactionObjectStore.getAll();
@@ -55,4 +56,4 @@ function uploadTransactions() {
   };
 }
 
-window.addEventListener('online', uploadTransactions);
+window.addEventListener('online', updateTransactions);
